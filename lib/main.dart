@@ -15,17 +15,26 @@ class MyApp extends StatelessWidget
     @override
     Widget build(BuildContext context) {
         // TODO: implement build
-        return Center(
-            child: Column(
+        return Column(
             children: <Widget>[
-                makeText('1111', width: 100, height: 50),
-                makeText('2222', width: 100, height: 50),
-                makeText('3333', width: 100, height: 50),
-            ],
-            mainAxisAlignment: MainAxisAlignment.center,    // 세로 중앙
-            crossAxisAlignment: CrossAxisAlignment.stretch, // 가로 길게
+                makeRow(left:'1',middle:'2',right:'3'),
+                makeRow(left:'4',middle:'5',right:'6'),
+                makeRow(left:'7',middle:'8',right:'9'),
 
-        ));
+            ],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        );
+    }
+
+    Widget makeRow({String left, String middle, String right}) {
+        return Row(
+            children: <Widget>[
+                makeText(left, width: 100, height: 100),
+                makeText(middle, width: 100, height: 100),
+                makeText(right, width: 100, height: 100),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+        );
     }
 
     Widget makeText(String title, {double width, double height}) {
