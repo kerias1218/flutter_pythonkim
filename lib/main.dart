@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget
     Widget build(BuildContext context) {
         // TODO: implement build
         return Center(
-            child: Image.asset('images/001.jpg'),
+            child: Image.asset(
+                'images/001.jpg',
+                width: 300,
+                height: 400,
+                color: Colors.red,
+                colorBlendMode: BlendMode.darken,   //그림과 색상 조합방법
+            ),
         );
 
     }
