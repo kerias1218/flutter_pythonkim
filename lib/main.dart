@@ -3,38 +3,42 @@ import 'package:flutter/material.dart';
 void main() {
     runApp(MaterialApp(
         title: '텍스트 위젯',
-        home: MyApp(),
+        home: Scaffold(
+            appBar: AppBar(title: Text('멀티 텍스트'),),
+            body: MyApp(),
+        ),
     ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget
+{
     @override
     Widget build(BuildContext context) {
-        return Scaffold(
-            appBar: AppBar(title: Text('텍스트 스타일 박스'),),
-            body: Center(
-                child: Container(
-                    child: Text(
-                        '텍스트 스타일!',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 41,
-                            color: Colors.blue,
-                        ),
-                        textAlign: TextAlign.center,
+        // TODO: implement build
+        return Stack(
+            children: <Widget>[
+                Positioned(child: makeText('왼쪽',width:100, height:50),left:30),
+                Positioned(child: makeText('오른쪽',width:100, height:50),right:30),
+                Positioned(child: makeText('가운데',width:100, height:50),top:100,left:100,right: 100,),
 
+            ],
+        );
+    }
 
+    Widget makeText(String title, {double width, double height}) {
+        return Container(
+            child: Center(
+                child: Text(
+                    title,
+                    style: TextStyle(
+                        fontSize: 21,
+                        color: Colors.red,
                     ),
-                    decoration: BoxDecoration(
-                        color: Colors.green[300],
-                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                    ),
-                    width: 300.0,
-                    height: 100.0,
-                    alignment: AlignmentDirectional.center
                 ),
             ),
+            width: width,
+            height: height,
+            decoration: BoxDecoration(color: Colors.green[300]),
         );
     }
 }
-
