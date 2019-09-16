@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
     runApp(MaterialApp(
-        title: '첫 번째',
+        title: '텍스트 위젯',
         home: MyApp(),
     ));
 }
@@ -13,8 +13,17 @@ class MyApp extends StatelessWidget
     Widget build(BuildContext context) {
         // TODO: implement build
         return Scaffold(
-            appBar: AppBar(title: Text('처음')),
-            body: Center(child: Text('텍스트 위젯'),)
+            appBar: AppBar(title: Text('텍스트 스타일')),
+            body: Center(
+                child: Text(
+                    '텍스트 스타일',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 42,
+                        color: Colors.blue,
+                    ),
+                ),
+            )
         );
     }
 
