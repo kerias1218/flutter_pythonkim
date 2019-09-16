@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget
         return Center(
             child: Image.asset(
                 'images/001.jpg',
-                width: 300,
+                width: 100,
                 height: 400,
-                color: Colors.red,
+                color: Colors.blue,
+                fit: BoxFit.contain,
                 colorBlendMode: BlendMode.darken,   //그림과 색상 조합방법
             ),
         );
