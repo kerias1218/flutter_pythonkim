@@ -4,7 +4,7 @@ void main() {
     runApp(MaterialApp(
         title: '텍스트 위젯',
         home: Scaffold(
-            appBar: AppBar(title: Text('멀티 텍스트'),),
+            appBar: AppBar(title: Text('수평 정렬'),),
             body: MyApp(),
         ),
     ));
@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget
     @override
     Widget build(BuildContext context) {
         // TODO: implement build
-        return Stack(
+        return Row(
             children: <Widget>[
-                Positioned(child: makeText('왼쪽',width:100, height:50),left:30),
-                Positioned(child: makeText('오른쪽',width:100, height:50),right:30),
-                Positioned(child: makeText('가운데',width:100, height:50),top:100,left:100,right: 100,),
-
+                makeText('1111', width: 100, height: 50),
+                makeText('2222', width: 100, height: 50),
+                makeText('3333', width: 100, height: 50),
             ],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,   //왼쪽부터 나란히 
         );
     }
 
@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget
             width: width,
             height: height,
             decoration: BoxDecoration(color: Colors.green[300]),
+            margin: EdgeInsets.all(10.0),
         );
     }
 }
